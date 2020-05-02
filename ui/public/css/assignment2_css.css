@@ -1,0 +1,71 @@
+/*
+Werry, Kristi
+823386935
+Assignment #2
+*/
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table.bordered-table th, td {
+	border: 1px solid black; padding: 4px;
+}
+
+body {
+	font-size: 16pt;
+	background-color: #f4f4f4;
+	color:#000000;
+    font-family: Arial, Helvetica,sans-serif;
+    text-align: left;
+}
+
+article {
+	margin: 30pt;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.column {
+	float: left;
+	width: 50%;
+	padding: 10px;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    border: none;
+    background-color: #86E3D5;
+    padding: 14px 28px;
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+h1 {
+	font-size: 40pt;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+	font-size: 20pt;
+	font-weight: normal;
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-top: 10pt;
+	margin-bottom: 5pt;
+}
