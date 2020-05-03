@@ -1,3 +1,9 @@
+/*
+Werry, Kristi
+823386935
+Assignment #7
+*/
+
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import {

@@ -1,8 +1,9 @@
 /*
 Werry, Kristi
 823386935
-Assignment #6
+Assignment #7
 */
+
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';

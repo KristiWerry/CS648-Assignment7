@@ -1,9 +1,13 @@
+/*
+Werry, Kristi
+823386935
+Assignment #7
+*/
+
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import ProductList from './ProductList.jsx';
-//import ProductImage? from './Productpage?.jsx';
-//<Route path="/report" component={ProductReport} />
 import ProductEdit from './ProductEdit.jsx';
 import ProductImage from './ProductImage.jsx';
 

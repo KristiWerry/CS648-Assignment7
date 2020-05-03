@@ -1,7 +1,7 @@
 /*
 Werry, Kristi
 823386935
-Assignment #6
+Assignment #7
 */
 
 const fs = require('fs');
@@ -14,6 +14,7 @@ const resolvers = {
     Query: {
       productList: product.productList,
       product: product.get,
+      productCount: product.counts,
     },
     Mutation: {
       productAdd: product.productAdd,

@@ -1,3 +1,9 @@
+/*
+Werry, Kristi
+823386935
+Assignment #7
+*/
+
 const { getDb, getNextSequence } = require('./db.js');
 
 async function get(_, { id }) {
@@ -41,10 +47,26 @@ async function remove(_, { id }) {
     return result.deletedCount === 1;
 }
 
+async function counts() {
+    const db = getDb();
+    const result = await db.collection('products').aggregate([
+        {
+            $group: {
+                _id: null,
+                count: { $sum: 1 },
+            },
+        },
+    ]).toArray();
+    
+    if(result) return result[0].count;
+    return 0;
+}
+
 module.exports = { 
     productList, 
     productAdd, 
     get, 
     update, 
     delete: remove,
+    counts,
 };

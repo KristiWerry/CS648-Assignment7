@@ -1,7 +1,7 @@
 /*
 Werry, Kristi
 823386935
-Assignment #6
+Assignment #7
 */
 
 import React from 'react';
@@ -24,6 +24,7 @@ export default class ProductList extends React.Component {
   }
 
   async loadData() {
+    this.loadCount();
     const query = `query {
       productList {
         id Category Name Price Image 
@@ -36,6 +37,16 @@ export default class ProductList extends React.Component {
     }
   }
 
+  async loadCount() {
+    const query = `query {
+      productCount
+    }`;
+    const data = await graphQLFetch(query);
+    if (data) {
+      this.setState({ count: data.productCount });
+    }
+  }
+
   async createProduct(product) {
     const query = `mutation productAdd($product: ProductInputs!) {
       productAdd(product: $product) {
@@ -45,6 +56,7 @@ export default class ProductList extends React.Component {
     const data = await graphQLFetch(query, { product });
     if (data) {
       this.loadData();
+      this.loadCount();
     }
   }
 
@@ -68,10 +80,11 @@ export default class ProductList extends React.Component {
     } else {
       this.loadData();
     }
+    this.loadCount();
   }
 
   render() {
-    const { products } = this.state;
+    const { products, count } = this.state;
     return (
       <React.Fragment>
         <Panel>
@@ -79,8 +92,9 @@ export default class ProductList extends React.Component {
             <Panel.Title>Product List</Panel.Title>
           </Panel.Heading>
           <Panel.Body>
-            <ProductTable products={products} deleteProduct={this.deleteProduct}/>
+            <h3>The list contains { count } products</h3>
             <br />
+            <ProductTable products={products} deleteProduct={this.deleteProduct}/>
           </Panel.Body>
         </Panel>
         <Panel>
