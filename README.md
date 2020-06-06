@@ -1,4 +1,5 @@
-# CS648-Assignment7
+# Product Inventory Manager
+Uses React, Node.js, Express, MongoDB, GraphQL, React Router, React Forms, and React Bootstrap.
 Uses MongoDB aggregation to display the total records returned by the query 
  
 To run:
